@@ -16,3 +16,12 @@ Aplikasi dijalankan menggunakan PHP.
 - Cookie
 - Flash Message
 - Keranjang sederhana
+
+## Pengujian
+
+- Menampilkan katalog produk
+- Menambahkan produk ke keranjang
+- Menghapus produk dari keranjang
+- Mengosongkan keranjang
+- Mengubah tema menggunakan cookie
+- Menangani input yang tidak valid
