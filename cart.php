@@ -24,10 +24,25 @@ $cart = $_SESSION['cart'];
 <?php else: ?>
 
     <?php foreach ($cart as $id): ?>
+
         <p>Produk ID: <?= htmlspecialchars($id) ?></p>
+
+        <form action="actions.php" method="post">
+            <input type="hidden" name="action" value="remove">
+            <input type="hidden" name="id" value="<?= $id ?>">
+            <button type="submit">Hapus</button>
+        </form>
+
     <?php endforeach; ?>
 
+    <form action="actions.php" method="post">
+        <input type="hidden" name="action" value="clear">
+        <button type="submit">Kosongkan Keranjang</button>
+    </form>
+
 <?php endif; ?>
+
+<br>
 
 <a href="index.php">Kembali ke Katalog</a>
 

@@ -10,6 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($action === 'add' && $id > 0) {
         $_SESSION['cart'][] = $id;
     }
+
+    if ($action === 'remove' && $id > 0) {
+        $key = array_search($id, $_SESSION['cart']);
+
+        if ($key !== false) {
+            unset($_SESSION['cart'][$key]);
+            $_SESSION['cart'] = array_values($_SESSION['cart']);
+        }
+    }
+
+    if ($action === 'clear') {
+        $_SESSION['cart'] = [];
+    }
 }
 
 header('Location: index.php');
